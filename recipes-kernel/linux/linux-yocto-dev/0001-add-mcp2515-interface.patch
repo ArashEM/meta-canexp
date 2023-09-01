@@ -1,0 +1,39 @@
+diff --git a/rk3288-tinker.dts.orig b/rk3288-tinker.dts
+index 1e43527..3a1c07a 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dts
++++ b/arch/arm/boot/dts/rk3288-tinker.dts
+@@ -10,4 +10,34 @@
+ / {
+ 	model = "Rockchip RK3288 Asus Tinker Board";
+ 	compatible = "asus,rk3288-tinker", "rockchip,rk3288";
++
++    can0_osc: can0_osc {
++         compatible = "fixed-clock";
++         #clock-cells = <0>;
++         clock-frequency  = <8000000>;
++    };
++};
++
++&pinctrl {
++	can {
++		can0_pins: can0-pins {
++			rockchip,pins = <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++};
++
++&spi2 {
++	status = "okay";
++	can0: can@0 {
++		compatible = "microchip,mcp2515";
++		reg = <0>;
++		clocks = <&can0_osc>;
++		interrupt-parent = <&gpio0>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&can0_pins>;
++		interrupts = <RK_PC1 IRQ_TYPE_EDGE_FALLING>;
++		spi-max-frequency = <10000000>;
++		status = "okay";
++	};
++
+ };

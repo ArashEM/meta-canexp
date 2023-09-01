@@ -1,0 +1,45 @@
+diff --git a/interfaces b/interfaces
+index 0acf4cf..6ca6159 100644
+--- a/interfaces
++++ b/interfaces
+@@ -4,28 +4,20 @@
+ auto lo
+ iface lo inet loopback
+ 
+-# Wireless interfaces
+-iface wlan0 inet dhcp
+-	wireless_mode managed
+-	wireless_essid any
+-	wpa-driver wext
+-	wpa-conf /etc/wpa_supplicant.conf
+-
+-iface atml0 inet dhcp
+-
+ # Wired or wireless interfaces
+ auto eth0
+ iface eth0 inet dhcp
+-iface eth1 inet dhcp
+-
+-# Ethernet/RNDIS gadget (g_ether)
+-# ... or on host side, usbnet and random hwaddr
+-iface usb0 inet static
+-	address 192.168.7.2
+-	netmask 255.255.255.0
+-	network 192.168.7.0
+-	gateway 192.168.7.1
+ 
+-# Bluetooth networking
+-iface bnep0 inet dhcp
++# CAN interface
++auto can0
++iface can0 inet manual
++    pre-up /sbin/ip link set can0 type can bitrate 125000
++    up /sbin/ifconfig can0 up
++    down /sbin/ifconfig can0 down
+ 
++# Virtual CAN device
++auto vcan0
++iface vcan0 inet manual
++    pre-up /sbin/ip link add dev vcan0 type vcan
++    up /sbin/ifconfig vcan0 up
++    down /sbin/ifconfig vcan0 down
