@@ -1,41 +1,7 @@
-This README file contains information on the contents of the meta-canexp layer.
+# Introduction 
+This layer helps you to add `mcp2515` module into ASUS-Tinker board.
 
-Please see the corresponding sections below for details.
-
-Dependencies
-============
-
-  URI: <first dependency>
-  branch: <branch name>
-
-  URI: <second dependency>
-  branch: <branch name>
-
-  .
-  .
-  .
-
-Patches
-=======
-
-Please submit any patches against the meta-canexp layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
-=================
-
-  I. Adding the meta-canexp layer to your build
- II. Misc
-
-
-I. Adding the meta-canexp layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-canexp'
-
-II. Misc
-========
-
---- replace with specific information about the meta-canexp layer ---
+# Notes
+Please note that:
+1. `dunfell` branch of `meta-rockchip` use Linux version **5.4.205** by default. But for using `isotp` and `socketcand` you need at least Linux version **5.10.0** or later
+2. You need to provide **5v0** supply for CAN transceiver (`tja1050`) because it won't work with **3v3** supply from _ASUS-Tinker_
