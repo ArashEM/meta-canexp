@@ -10,6 +10,9 @@ PV = "0.6.1+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
-inherit autotools pkgconfig
+inherit autotools pkgconfig update-rc.d
+
+INITSCRIPT_NAME = "socketcand"
+INITSCRIPT_PARAMS = "start 02 5 3 2 . stop 20 0 1 6 ."
 
 EXTRA_OECONF_append = " --without-config"
