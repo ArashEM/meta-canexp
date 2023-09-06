@@ -44,6 +44,14 @@ This is top view of _AUSU-Tinker_ 40 pin header.
 | -         |  -              | 37       |   38     |  -              |   -       |
 | -         |  -              | 39       |   40     |  -              |   -       |
 
+# View
+Here is what it looks like :-)   
+Connectig `rasppberypi` and `asus-tinker` via **CAN** network.
+![CAN](docs/can.jpg)
+
+Here is what happend over `SPI` and `CAN` when I issued `cansend can0 100#11223344deadbeef` from `rasppbery`
+![LOGIC](docs/logic-cansend.jpg)
+
 # Notes
 Please note that:
 1. `dunfell` branch of `meta-rockchip` use Linux version **5.4.205** by default. But for using `isotp` and `socketcand` you need at least Linux version **5.10.0** or later. I handled it by adding `PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto-dev"` to `conf/local.conf.sample`.
