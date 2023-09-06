@@ -4,6 +4,8 @@ SECTION = "libs/network"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
+DEPENDS = "libsocketcan"
+
 SRC_URI = "git://github.com/linux-can/socketcand.git;protocol=https;branch=master"
 SRCREV = "0.6.1"
 PV = "0.6.1+git${SRCPV}"

@@ -1,10 +1,10 @@
 IMAGE_INSTALL += " \
     can-utils \
-    socketcand \
     libsocketcan \
     kernel-modules \
     strace \
-    vim-tiny \
+    vim \
+    htop \
     packagegroup-core-ssh-openssh \
     lsof \
 "
