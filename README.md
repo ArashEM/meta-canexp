@@ -6,6 +6,7 @@ This layer helps you to add `mcp2515` module into _ASUS-Tinker_ board.
 ```bash
 git clone git://git.yoctoproject.org/poky -b dunfell
 cd poky/
+git clone git://git.yoctoproject.org/meta-rockchip -b dunfell
 git clone https://github.com/openembedded/meta-openembedded.git -b dunfell
 git clone https://github.com/ArashEM/meta-canexp.git -b dunfell
 cd ../
