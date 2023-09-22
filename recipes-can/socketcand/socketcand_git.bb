@@ -1,8 +1,9 @@
 SUMMARY = "Server to access CAN sockets over ASCII protocol"
 HOMEPAGE = "https://github.com/linux-can/socketcand/tree/master"
 SECTION = "libs/network"
-LICENSE = "CLOSED"
-LIC_FILES_CHKSUM = ""
+LICENSE = "GPL-2.0"
+LIC_FILES_CHKSUM = "\
+    file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 DEPENDS = "libsocketcan"
 
